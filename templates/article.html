@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}{{ super() }} : {{ article.title }}{% endblock %}
+{% block content %}        
+<header>
+    <h0><a href="{{ SITEURL }}" id="site-title">{{ SITENAME }} {% if SITESUBTITLE %} <strong>{{ SITESUBTITLE }}</strong>{% endif %}</a></h0>
+     {% include 'topnav.html' %}
+    	<h1>
+        <a href="{{ SITEURL }}/{{ article.url }}" id="page-title">{{ article.title }}</a></h1>
+    {% if not HIDE_DATE %}<div class= "well small"> {{ article.locale_date }}</div>{% endif %}
+</header>
+<article>
+    {{ article.content }}
+</article>
+{% endblock %}

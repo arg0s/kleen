@@ -1,0 +1,9 @@
+         <div class= "topnav">
+            <ul>
+            {% for page in PAGES %}
+                <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a>{% if not loop.last %}&nbsp;|&nbsp;{% endif %}</li>
+            {% endfor %}
+                <li>&nbsp;|&nbsp;<a href="/">blog</a></li>
+            </ul>
+        </div>
+

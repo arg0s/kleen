@@ -1,0 +1,168 @@
+/*
+    Theme Name: kleen
+    Theme URI: http://www.arg0s.in
+    Description: Theme adapted from http://mnmlist.com/theme/ from Leo Babauta, a very clean minimalist theme, without comments, search, archives or other features.
+    Author: Aravind Krishnaswamy
+
+    This theme is uncopyrighted, free, and offered as is.
+*/
+
+@import url("pygment.css");
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700);
+
+body {
+    background: #fff;
+    color: #333;
+    font: 20px Hoefler Text, bodyfont, serif;
+    font-family: 'Droid Serif', 'Hoefler Text', Georgia, Times, 'Times New Roman', bodyfont, serif;
+    line-height: 30px;
+    max-width: 30em;
+    /*margin: 60px 14px 0 64px;*/
+    margin: 40px auto 0px auto;
+}
+
+body>header>h0{
+    text-align: center;
+    border-bottom: 3px solid #272727;
+    padding-top: 0.25em;padding-bottom:0.25em;
+}
+
+body>header>h1{padding-top:0.75em;padding-bottom:0.25em;}
+
+@mixin heading ($font-size, $color: #666) {
+    color: $color;
+    font-family: 
+    'Hoefler Text', Georgia, Times, 'Times New Roman', serif;
+    font-size: $font-size;
+    line-height: normal;
+}
+
+h0 {
+    @include heading(3.0em, #111);
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+
+h1 {
+    @include heading(2.0em, #111);
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+h2 {
+    @include heading(1.3em, #111);
+}
+
+h3 {
+    @include heading(1em);
+}
+
+h4 {
+    @include heading(0.9em);
+}
+
+time {
+    color: #c0c0c0;
+    font-size: 50%;
+}
+
+img {
+    border: none;
+    max-width:100%;
+}
+
+blockquote {
+    border-left: 1px solid #A5ABAB;
+    margin:0px;
+    padding:0 12px 0 12px;
+}
+
+p {
+    line-height: 30px;
+    margin:30px auto;
+    text-indent: 0px;
+    &.caption {
+        font-size: 80%;
+        margin-top: 0;
+    }
+}
+
+a {
+    border-bottom: #999 1px solid;
+    color: #303030;
+    text-decoration: none;
+    &:hover { color: #999; }
+}
+
+ul, ol {
+    padding: .5em 0em 1em 3.2em;
+    li {
+        line-height: 30px;
+        padding: 6px 0 0 0;
+    }
+}
+
+strong {
+    color: #555555;
+    font-family: 'PT Serif', Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+}
+
+tt, pre {
+    background-color: #fafafa;
+    font-family: Inconsolata, Monaco, monospace;
+    line-height: 1.2em;
+}
+
+pre {
+    font-size: 0.8em;
+    overflow: auto;
+    padding: 10px;
+}
+
+header {
+    padding-bottom: 20px;
+    text-align: center;
+    h1, div.well.small,{
+        text-align: left;
+    }
+    a {
+        border-bottom: none;
+        &#page-title { font-weight: bold; }
+    }
+    li {
+        display: inline;
+    }
+}
+
+.article {padding-top:2.5em;padding-bottom:1.5em;border-top:4px solid #e6e6e6}
+div.well.small {@include heading(1.0em, #A2A2A2);}
+
+#article-list {
+    margin-top: 100px;
+    ol li {
+        line-height: 1.2em;
+        list-style-type: none;
+        padding-bottom: 10px;
+    }
+}
+
+footer {
+    background: #fff;
+    color: #666;
+    font-family:'PT Serif', Georgia, Times, 'Times New Roman', serif;
+    font-size:13px;
+    letter-spacing:4px;
+    margin-left: 20px;
+    a {
+        border-bottom: none;
+        color: #c0c0c0;
+    }
+    li {
+        display: inline;
+    }
+    p {
+        text-align: right;
+    }
+}

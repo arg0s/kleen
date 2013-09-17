@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content_title %}{% endblock %}
+{% block content %}        
+{% if articles %}
+    {% for article in articles_page.object_list %}        
+
+        {# First item #}
+        {% if loop.first and not articles_page.has_previous() %}
+            <header>
+                <h0><a href="{{ SITEURL }}" id="site-title">{{ SITENAME }} {% if SITESUBTITLE %} <strong>{{ SITESUBTITLE }}</strong>{% endif %}</a></h0>
+                {% include 'topnav.html' %}
+                <h1><a href="{{ SITEURL }}/{{ article.url }}" id="page-title">{{ article.title }}</a></h1>
+                {% if not HIDE_DATE %}<div class= "well small"> {{ article.locale_date }}</div>{% endif %}
+            </header>
+
+            <article>
+                {{ article.content }}{% include 'comments.html' %}
+            </article>
+            {% if loop.length == 1 %}
+              {% include 'pagination.html' %}
+            {% endif %}
+        {# other items #}
+        {% else %} 
+
+   <div class='article'>
+        <a href="{{ SITEURL }}/{{ article.url }}"><h1>{{ article.title }}</h1></a>
+        <div class= "well small"> {% include "metadata.html" %} </div>
+        <div class="summary">{{ article.summary }} <a class="btn btn-info xsmall" href="{{ SITEURL }}/{{ article.url }}">Continue reading →</a></div>
+    </div>  
+
+    {% if loop.last and (articles_page.has_previous() or not articles_page.has_previous() and loop.length > 1) %}
+        {% include 'pagination.html' %}
+    {% endif %}
+
+        {% endif %}
+{% endfor %}
+    {% if loop.length > 1 %}
+    </ol>
+    </section><!-- #article-list -->
+{% endif %}
+{% else %}
+    No posts found.
+{% endif %}
+{% endblock content %}

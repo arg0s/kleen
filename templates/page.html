@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}{{ page.title }}{% endblock %}
+{% block content %}        
+<header>
+    <h0><a href="{{ SITEURL }}" id="site-title">{{ SITENAME }} {% if SITESUBTITLE %} <strong>{{ SITESUBTITLE }}</strong>{% endif %}</a></h0>
+    {% include 'topnav.html' %}
+
+        <h1><a href="{{ SITEURL }}/{{ page.slug }}" id="page-title">{{ page.title }}</a></h1>
+</header>
+<article>    
+    {{ page.content }}
+</article>
+{% endblock %}
