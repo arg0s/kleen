@@ -68,8 +68,10 @@ time {
 }
 
 img {
-    border: none;
+    /*border: none;*/
     max-width:100%;
+    padding: 5px;
+    border: solid 1px #EFEFEF;
 }
 
 blockquote {
@@ -101,6 +103,9 @@ ul, ol {
         line-height: 30px;
         padding: 6px 0 0 0;
     }
+}
+header>div>ul{
+    padding: .5em 0em 1em 0.5em;
 }
 
 strong {
